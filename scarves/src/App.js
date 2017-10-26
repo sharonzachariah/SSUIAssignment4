@@ -3,15 +3,15 @@ import './App.css';
 
 import Home from './Home.js';
 import Browse from './Browse.js';
-import Cart from './Cart.js';
+
 import ProductD from './ProductD.js';
 import menu from './images/menu.png';
-import hero from './images/hero.png';
+
 import cta from './images/cta.png';
 import cart from './images/cart.png';
 
 
-var c=Number(localStorage.getItem("cnt"));
+
  class App extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +71,7 @@ displayMenu()
 
 
 <img src={menu} className = "menu" onClick={(ev) => this.displayMenu()} alt="menu"/>
-<img src={cta} className = {((this.state.page == 1)|| (this.state.page == 2) ? " displayNone" : "cta")} onClick={(ev) => this.pageChange() } alt="cta"/> 
+<img src={cta} className = {((this.state.page === 1)|| (this.state.page === 2) ? " displayNone" : "cta")} onClick={(ev) => this.pageChange() } alt="cta"/> 
 
 {this.renderPageView()}
 

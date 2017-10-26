@@ -66,7 +66,7 @@ changeColor(strin)
 
  changeImage(idd,colorr)
  {
-   if (idd == "0")
+   if (idd === "0")
       {
         if(colorr === "red")
       return <img src={redKnit} className="imm" alt="product"/>
@@ -77,7 +77,7 @@ changeColor(strin)
     if(colorr === "yellow")
       return <img src={yellowKnit} className="imm" alt="product"/>
       }
-     if (idd == "1")
+     if (idd === "1")
        {
           if(colorr === "red")
       return <img src={redPrint} className="imm" alt="product"/>
@@ -89,7 +89,7 @@ changeColor(strin)
       return <img src={yellowPrint} className="imm" alt="product"/>
 
        }
-     if (idd == "2")
+     if (idd === "2")
        {
         if(colorr === "red")
       return <img src={redHead} className="imm" alt="product"/>
@@ -132,10 +132,10 @@ displayCount()
 delete(x)
 {
   //need to remove the parent of this item
-  if (del == 0)
+  if (del === 0)
   {  
     var list = localStorage.getItem("cartArray");
-    var list = JSON.parse(list);
+    list = JSON.parse(list);
     list.splice(x,1);
   
   
@@ -196,9 +196,6 @@ placeItem()
   {
     
     var getD= JSON.parse(db);
-    var title=getD.id[no].title;
-    var desc=getD.id[no].subt;
-    var price=getD.id[no].price;
     localStorage.setItem("count","0");
     
 
@@ -215,15 +212,15 @@ placeItem()
 <img src={menu} className = "menu" onClick={(ev) => this.displayMenu(ev)} alt="menu"/>
 
 <div className="itemShow"> {this.displayCount()}
-<div className={this.state.count == 0? "displayNone": ""}>
+<div className={this.state.count === 0? "displayNone": ""}>
 <pre >Item                                     Price          Quantity         Total</pre>
-<img src={line} className="linepos"/>
+<img src={line} className="linepos" alt="line"/>
 {this.placeItem()}
 
 </div>
 </div>
 
-<div className={this.state.count == 0? "displayNone": "blueBox"}>
+<div className={this.state.count === 0? "displayNone": "blueBox"}>
    <div className="one">Subtotal: ${subtotal}</div>
    <div className="one">Shipping: ${ship}</div>
    <img src={line} className="line1" alt="line"/>
@@ -231,7 +228,7 @@ placeItem()
    <img src={checkout} className="checkout" alt="checkout"/>
 </div>
 
-<img src={shopButton} className={this.state.count == 0? "shopp": "displayNone"} onClick={(ev) => this.displayMenu()}/>
+<img src={shopButton} className={this.state.count === 0? "shopp": "displayNone"} onClick={(ev) => this.displayMenu()} alt="shopButton"/>
 
 </span>
     );
