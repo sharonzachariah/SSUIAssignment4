@@ -66,7 +66,7 @@ changeColor(strin)
 
  changeImage(idd,colorr)
  {
-   if (idd === "0")
+   if (idd === 0)
       {
         if(colorr === "red")
       return <img src={redKnit} className="imm" alt="product"/>
@@ -77,7 +77,7 @@ changeColor(strin)
     if(colorr === "yellow")
       return <img src={yellowKnit} className="imm" alt="product"/>
       }
-     if (idd === "1")
+     if (idd === 1)
        {
           if(colorr === "red")
       return <img src={redPrint} className="imm" alt="product"/>
@@ -89,7 +89,7 @@ changeColor(strin)
       return <img src={yellowPrint} className="imm" alt="product"/>
 
        }
-     if (idd === "2")
+     if (idd === 2)
        {
         if(colorr === "red")
       return <img src={redHead} className="imm" alt="product"/>
